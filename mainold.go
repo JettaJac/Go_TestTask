@@ -1,5 +1,20 @@
 package main
 
+
+
+import (
+	"log"
+	"TestTaskServer/internal/pkg/app"
+)
+
+
+func main(){
+	a, err := app.New()
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+/*
 // mkdir myapp && cd myapp
 // $ go mod init myapp
 // $ go get github.com/labstack/echo/v4
@@ -15,7 +30,7 @@ import (
 func main (){
 	fmt.Println("Start Server")
 	s := echo.New()
-	s.Use(MW) // инициализоровано глобально. Будет применим ко всем обработчикам, далее мы его применяем только к одному разработчику
+	//s.Use(MW) // инициализоровано глобально. Будет применим ко всем обработчикам, далее мы его применяем только к одному разработчику
 	s.GET("/status", Handler, MW) // MV тут, что был применем только к этому обработчику
 	err := s.Start(":8080")
 	if err != nil {
@@ -48,4 +63,4 @@ func MW (next echo.HandlerFunc) echo.HandlerFunc{
 	}
 
 	
-}
+}*/
